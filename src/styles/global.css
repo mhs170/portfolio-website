@@ -1,5 +1,20 @@
-*{
+/* Global styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .projects li {
+      flex-direction: column; /* Stack name and date */
+      align-items: flex-start; /* Align content to the left */
+      gap: 0.25rem; /* Add some spacing between items */
+    }
+  
+    .projects .date {
+      font-size: 0.75rem; /* Reduce date size on mobile */
+    }
+  }
+  

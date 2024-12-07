@@ -6,25 +6,93 @@ import Card from "../components/Card.astro";
 ---
 
 <!-- profile2.webp you can remove | Photo <a href="https://unsplash.com/es/@charlesdeluvio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">charlesdeluvio</a> en <a href="https://unsplash.com/es/fotos/hombre-con-gorro-negro-kVg2DQTAK7c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-   -->
+-->
 
 <!-- You can replace the card's data with your own here. -->
 <BaseLayout title="Personal Card Portfolio Astro" description="Meta description. Here goes your page description. Provide a clear and concise summary of the content.">
-	<Card
-	  name="Mohammed Salama"
-	  position="Software Engineer"
-	  aboutMe={`Hi there! I'm Mohammed`}
-	  linkedin="https://www.linkedin.com/in/mohammed-salama-57a110211/"
-	  github="https://github.com/mhs170"
-	  cvLink="/files/resume-cv.pdf"
-	  profileImage="/images/profile.webp"
-	/>
+  <Card
+    name="Mohammed Salama"
+    position="Software Engineer"
+    aboutMe={`Hi there! I'm Mohammed`}
+    linkedin="https://www.linkedin.com/in/mohammed-salama-57a110211/"
+    github="https://github.com/mhs170"
+    cvLink="/files/resume-cv.pdf"
+    profileImage="/images/profile.webp"
+  />
+
+  <!-- My Projects Section -->
+  <section class="projects">
+    <h2>My Projects</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/mhs170/" target="_blank">Project 1</a>
+        <span class="date">date</span>
+      </li>
+      <li>
+        <a href="https://github.com/mhs170/" target="_blank">Project 2</a>
+        <span class="date">date</span>
+      </li>
+      <li>
+        <a href="https://github.com/mhs170/" target="_blank">Project 3</a>
+        <span class="date">date</span>
+      </li>
+    </ul>
+  </section>
 </BaseLayout>
 
-<!--
-	"Hi there!, I'm Brian. I hope this small template helps you gain visibility while you build great projects. Thank you for using it. I wish you success in everything you set out to do; you will surely achieve great things.
+<style>
+  /* Styling for My Projects Section */
+  .projects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-	Here is my GitHub {https://github.com/alcarazbrian}. You can help me by following me, giving a Star to the template, and sharing it so others can see and use it.
+  .projects li {
+    display: flex;
+    justify-content: space-between; /* Space between name and date */
+    align-items: center; /* Align name and date vertically */
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+    font-family: "Roboto Mono", monospace; /* Monospace font for clean aesthetic */
+  }
 
-	Have a great day!"
- -->
+  .projects li:last-child {
+    border-bottom: none; /* Remove border for last item */
+  }
+
+  .projects a {
+    color: #82aaff; /* Light blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .projects a:hover {
+    color: #c792ea; /* Hover effect for link */
+  }
+
+  .projects .date {
+    color: #9a9a9a; /* Muted gray for the date */
+    font-size: 0.875rem; /* Slightly smaller than the project name */
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .projects li {
+      flex-direction: column; /* Stack name and date */
+      align-items: flex-start; /* Align content to the left */
+      gap: 0.25rem; /* Add some spacing between items */
+    }
+
+    .projects .date {
+      font-size: 0.75rem; /* Reduce date size on mobile */
+    }
+  }
+
+  /* Optional hover effect for list items */
+  .projects li:hover {
+    background: rgba(255, 255, 255, 0.05); /* Subtle highlight */
+    border-radius: 8px; /* Optional rounded corners */
+  }
+</style>
