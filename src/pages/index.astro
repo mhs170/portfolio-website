@@ -21,17 +21,17 @@ import Card from "../components/Card.astro";
   <section class="projects">
     <ul>
       <li>
-        <a href="https://github.com/mhs170/" target="_blank">Project 1</a>
-        <span class="date">date</span>
+        <a href="https://github.com/mhs170/BudgetBuddy" target="_blank">Budget Buddy</a>
+        <span class="date">07-2024</span>
       </li>
       <li>
-        <a href="https://github.com/mhs170/" target="_blank">Project 2</a>
-        <span class="date">date</span>
+        <a href="https://github.com/mhs170/railway" target="_blank">Railway System</a>
+        <span class="date">12-2024</span>
       </li>
-      <li>
+      <!--<li>
         <a href="https://github.com/mhs170/" target="_blank">Project 3</a>
         <span class="date">date</span>
-      </li>
+      </li>-->
     </ul>
   </section>
 </BaseLayout>
@@ -55,8 +55,8 @@ import Card from "../components/Card.astro";
 
   /* Styling for My Projects Section */
   .projects {
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
   }
 
   .projects h2 {
@@ -73,15 +73,10 @@ import Card from "../components/Card.astro";
 
   .projects li {
     display: flex;
-    justify-content: space-between; /* Space between name and date */
+    justify-content: center;
     align-items: center; /* Align name and date vertically */
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
     font-family: "Roboto Mono", monospace; /* Monospace font for clean aesthetic */
-  }
-
-  .projects li:last-child {
-    border-bottom: none; /* Remove border for last item */
   }
 
   .projects a {
@@ -92,12 +87,13 @@ import Card from "../components/Card.astro";
   }
 
   .projects a:hover {
-    color: #ff8a80; /* Hover effect for all project links */
+    color: #3a5161; /* Hover effect for all project links */
   }
 
   .projects .date {
     color: #9a9a9a; /* Muted gray for the date */
     font-size: 0.875rem; /* Slightly smaller than the project name */
+    margin-left: 1rem; 
   }
 
   /* Mobile responsiveness */
