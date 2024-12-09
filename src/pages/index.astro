@@ -5,11 +5,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 ---
 
-<!-- profile2.webp you can remove | Photo <a href="https://unsplash.com/es/@charlesdeluvio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">charlesdeluvio</a> en <a href="https://unsplash.com/es/fotos/hombre-con-gorro-negro-kVg2DQTAK7c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
--->
-
-<!-- You can replace the card's data with your own here. -->
 <BaseLayout title="Personal Card Portfolio Astro" description="Meta description. Here goes your page description. Provide a clear and concise summary of the content.">
+  <!-- Profile Card -->
   <Card
     name="Mohammed Salama"
     position="Software Engineer"
@@ -22,7 +19,6 @@ import Card from "../components/Card.astro";
 
   <!-- My Projects Section -->
   <section class="projects">
-    <h2>My Projects</h2>
     <ul>
       <li>
         <a href="https://github.com/mhs170/" target="_blank">Project 1</a>
@@ -41,7 +37,34 @@ import Card from "../components/Card.astro";
 </BaseLayout>
 
 <style>
+  /* General Layout Styling */
+  body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #121212; /* Dark background for contrast */
+  }
+
+  /* Styling for Profile Card Section */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
   /* Styling for My Projects Section */
+  .projects {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .projects h2 {
+    font-size: 1.5rem;
+    color: #fff; /* White title */
+    margin-bottom: 1rem;
+  }
+
   .projects ul {
     list-style: none;
     padding: 0;
@@ -62,14 +85,14 @@ import Card from "../components/Card.astro";
   }
 
   .projects a {
-    color: #82aaff; /* Light blue for links */
+    color: #3a5161; /* New color for all project links */
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
   }
 
   .projects a:hover {
-    color: #c792ea; /* Hover effect for link */
+    color: #ff8a80; /* Hover effect for all project links */
   }
 
   .projects .date {
