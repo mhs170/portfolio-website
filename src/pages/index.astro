@@ -1,11 +1,15 @@
 ---
-// src/pages/index.astro
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 ---
 
 <BaseLayout title="Mohammed Salama Portfolio" description="Meta description. Here goes your page description. Provide a clear and concise summary of the content.">
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="public/images/video1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <!-- Profile Card -->
   <Card
     name="Mohammed Salama"
@@ -28,10 +32,6 @@ import Card from "../components/Card.astro";
         <a href="https://github.com/mhs170/railway" target="_blank">Railway System</a>
         <span class="date">12-2024</span>
       </li>
-      <!--<li>
-        <a href="https://github.com/mhs170/" target="_blank">Project 3</a>
-        <span class="date">date</span>
-      </li>-->
     </ul>
   </section>
 </BaseLayout>
@@ -41,7 +41,20 @@ import Card from "../components/Card.astro";
   body {
     font-family: Arial, sans-serif;
     color: white;
-    background-color: #121212; /* Dark background for contrast */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars due to video size */
+  }
+
+  /* Background Video Styling */
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+    z-index: -1; /* Places video behind other content */
   }
 
   /* Styling for Profile Card Section */
@@ -61,7 +74,7 @@ import Card from "../components/Card.astro";
 
   .projects h2 {
     font-size: 1.5rem;
-    color: #fff; /* White title */
+    color: #fff;
     margin-bottom: 1rem;
   }
 
@@ -74,44 +87,43 @@ import Card from "../components/Card.astro";
   .projects li {
     display: flex;
     justify-content: center;
-    align-items: center; /* Align name and date vertically */
+    align-items: center;
     padding: 0.5rem 0;
-    font-family: "Roboto Mono", monospace; /* Monospace font for clean aesthetic */
+    font-family: "Roboto Mono", monospace;
   }
 
   .projects a {
-    color: #3a5161; /* New color for all project links */
+    color: #3a5161;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
   }
 
   .projects a:hover {
-    color: #3a5161; /* Hover effect for all project links */
+    color: #3a5161;
   }
 
   .projects .date {
-    color: #9a9a9a; /* Muted gray for the date */
-    font-size: 0.875rem; /* Slightly smaller than the project name */
+    color: #9a9a9a;
+    font-size: 0.875rem;
     margin-left: 1rem; 
   }
 
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .projects li {
-      flex-direction: column; /* Stack name and date */
-      align-items: flex-start; /* Align content to the left */
-      gap: 0.25rem; /* Add some spacing between items */
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
     }
 
     .projects .date {
-      font-size: 0.75rem; /* Reduce date size on mobile */
+      font-size: 0.75rem;
     }
   }
 
-  /* Optional hover effect for list items */
   .projects li:hover {
-    background: rgba(255, 255, 255, 0.05); /* Subtle highlight */
-    border-radius: 8px; /* Optional rounded corners */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
   }
 </style>
